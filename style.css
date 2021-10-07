@@ -12,10 +12,12 @@
   --color-black: #212121;
   --color-beige: #f2c1b6;
   --color-dark-beige: #bf785e;
-  --color-dark-gray: #595959;
-  --color-light-gray: #d9d9d9;
+  --color-dark-grey: #595959;
+  --color-dark2-grey: #404040;
+  --color-grey: #8c8c8c;
   --color-orange: #f27457;
   --color-pink: #f27781;
+  --color-light-yellow: #ffffd3;
 
   /* Font size */
   --font-large: 48px;
@@ -111,6 +113,7 @@ p {
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-regular);
 }
+
 .navbar__menu__item {
   padding: 8px 12px;
   margin: 0 4px;
@@ -154,6 +157,10 @@ p {
 .section {
   padding: 50px;
   text-align: center;
+  margin: auto;
+}
+
+.section__container {
   max-width: 1200px;
   margin: auto;
 }
@@ -185,7 +192,7 @@ p {
 
 .major__title,
 .major__discription {
-  color: var(--color-dark-gray);
+  color: var(--color-dark-grey);
 }
 
 .major__discription {
@@ -205,7 +212,7 @@ p {
 
 .job__description {
   margin: 0 16px;
-  color: var(--color-dark-gray);
+  color: var(--color-dark-grey);
 }
 
 .job__name {
@@ -214,4 +221,70 @@ p {
 
 .job__period {
   font-size: var(--font-micro);
+}
+
+#skills {
+  background-color: lightyellow;
+}
+
+.skillset {
+  display: flex;
+  background-color: var(--color-light-grey);
+  color: var(--color-light-white);
+  margin: 20px 0px;
+}
+
+.skillset__title {
+  color: var(--color-light-white);
+  margin: 0px;
+  padding: 20px;
+}
+.skillset__left {
+  flex-basis: 60%;
+  background-color: var(--color-dark2-grey);
+  padding: 20px 40px;
+}
+
+.skill {
+  margin-bottom: 32px;
+}
+
+.skill__description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.skill__bar {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-grey);
+}
+
+.skill__value {
+  height: 3px;
+  background-color: var(--color-orange);
+}
+.skillset__right {
+  flex-basis: 40%;
+  background-color: var(--color-grey);
+  align-content: center;
+}
+
+.tools {
+  background-color: var(--color-dark-grey);
+}
+
+.tools__list,
+.etc__list {
+  padding: 20px;
+  margin: 0px;
+  font-size: var(--font-small);
+}
+
+.tools__list li {
+  margin-bottom: 3px;
+}
+
+.etc__list li {
+  margin-bottom: 3px;
 }
