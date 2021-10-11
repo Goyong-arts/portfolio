@@ -15,9 +15,10 @@
   --color-dark-grey: #595959;
   --color-dark2-grey: #404040;
   --color-grey: #8c8c8c;
-  --color-orange: #f27457;
+  --color-orange: #ff6a00;
   --color-pink: #f27781;
   --color-light-yellow: #ffffd3;
+  --color-dark-red: #be0027;
 
   /* Font size */
   --font-large: 48px;
@@ -474,6 +475,28 @@ p {
   transform: scale(1.2);
   color: var(--color-orange);
   transition: all var(--animation-duration) ease-in;
+}
+
+/* Scroll */
+.arrow-up {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 70px;
+  height: 70px;
+  font-size: 50px;
+  background-color: var(--color-orange);
+  color: var(--color-white);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity var(--animation-duration) ease-in;
+  pointer-events: none;
+}
+
+.arrow-up.visible {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /* For below 768px screen width */
