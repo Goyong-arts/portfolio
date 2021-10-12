@@ -64,6 +64,14 @@ workBtnContainer.addEventListener('click', e => {
   if (filter == null) {
     return;
   }
+
+  // Remove selection form the previous item and select the new one
+  const active = document.querySelector('.category__btn.selected');
+  active.classList.remove('selected');
+  const target =
+    e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
+  target.classList.add('selected');
+
   projectContaniner.classList.add('anim-out');
   setTimeout(() => {
     projects.forEach(project => {
@@ -73,7 +81,6 @@ workBtnContainer.addEventListener('click', e => {
         project.classList.add('invisible');
       }
     });
-
     projectContaniner.classList.remove('anim-out');
-  }, 500);
+  }, 300);
 });
