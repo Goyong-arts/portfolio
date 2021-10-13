@@ -65,6 +65,7 @@ button {
   cursor: pointer;
   border: none;
   outline: none;
+  padding: 0;
 }
 
 /* Typography */
@@ -105,7 +106,7 @@ p {
   background-color: transparent;
   align-items: center;
   color: var(--color-white);
-  padding: 16px;
+  padding: 12px 16px;
   transition: all var(--animation-duration) ease-in-out;
   z-index: 1;
 }
@@ -120,8 +121,9 @@ p {
 }
 
 .navbar__logo {
-  font-size: var(--font-medium);
-  font-weight: var(--weight-semi-regular);
+  width: 420px;
+  height: 30px;
+  line-height: 30px;
 }
 
 .navbar__menu__item {
@@ -170,6 +172,11 @@ p {
   padding: 8px 12px;
   border: 2px solid var(--color-dark-white);
   border-radius: var(--size-border-radius);
+}
+
+.home__contact:hover {
+  background-color: var(--color-orange);
+  color: var(--color-white);
 }
 
 /* Section common */
@@ -288,6 +295,7 @@ p {
   flex-basis: 40%;
   background-color: var(--color-grey);
   align-content: center;
+  padding: 20px 40px;
 }
 
 .tools {
@@ -320,6 +328,7 @@ p {
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
   padding: 8px 48px;
+  position: relative;
 }
 
 .category__btn.selected,
@@ -331,20 +340,20 @@ p {
 .category__btn.selected .category__count,
 .category__btn:hover .category__count {
   opacity: 1;
-  top: 0px;
+  top: 10px;
 }
 
 .category__count {
-  background-color: var(--color-orange);
+  background-color: var(--color-green);
   border-radius: 50%;
   color: var(--color-white);
   width: 24px;
   height: 24px;
   line-height: 24px;
   display: inline-block;
-  position: relative;
+  position: absolute;
   top: -20px;
-  left: 3px;
+  right: 16px;
   opacity: 0;
   transition: all var(--animation-duration) ease-in;
 }
@@ -359,7 +368,7 @@ p {
 
 .work__projects.anim-out {
   opacity: 0;
-  transform: scale(0.96) translateY(40px);
+  transform: scale(0.93) translateY(40px);
 }
 
 .project {
@@ -511,8 +520,25 @@ p {
 
 /* For below 768px screen width */
 @media screen and (max-width: 768px) {
+  :root {
+    /* Font size */
+    --font-large: 30px;
+    --font-medium: 18px;
+    --font-regular: 16px;
+    --font-small: 14px;
+    --font-micro: 12px;
+  }
+
   .navbar__toggle-btn {
     display: block;
+    top: 16px;
+    right: 16px;
+    font-size: var(--font-medium);
+  }
+
+  .section {
+    padding: 16px;
+    padding-top: 40px;
   }
 
   #navbar {
@@ -522,7 +548,7 @@ p {
   }
 
   #navbar.navbar--dark {
-    padding: 16px;
+    padding: 12px 16px;
   }
 
   .navbar__menu {
@@ -538,21 +564,76 @@ p {
 
   .about__majors {
     flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 0px;
   }
 
   .major {
-    margin-bottom: 38px;
+    margin-bottom: 30px;
   }
   .skillset {
     flex-direction: column;
+  }
+
+  .tools__list,
+  .etc__list {
+    padding: 10px;
+    margin: 0px;
+    font-size: var(--font-small);
   }
 
   .project {
     flex-grow: 1;
   }
 
+  .testimonial {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .testimonial__avater {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 8px;
+  }
+
+  .testimonial__avater:nth-child(even) {
+    margin-left: 0;
+  }
+
+  .testimonial__avater:nth-child(odd) {
+    margin-right: 0;
+  }
+
+  .testimonial__speech-bubble {
+    order: 1;
+  }
+
+  .category__btn {
+    margin: 4px 0;
+    width: 100%;
+  }
+
+  .category__btn.selected .category__count,
+  .category__btn:hover .category__count {
+    opacity: 1;
+    top: 5px;
+  }
+
+  .arrow-up {
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    line-height: 40px;
+    right: 16px;
+    bottom: 16px;
+  }
+
+  #contact {
+    padding: 30px;
+  }
+
+  .contact__title {
+    margin: 12px 0;
   }
 }
